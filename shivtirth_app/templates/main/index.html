@@ -1,0 +1,280 @@
+{% extends "main/base.html" %}
+{% block title %} Shivtirth Water Park {% endblock %}
+{% block content %}
+{% load static %}
+
+    <body>
+        <!--================Banner Area =================-->
+        <section class="banner_area">
+            <div class="booking_table d_flex align-items-center">
+            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					<div class="banner_content text-center">
+						<h6>Get Ready for non-stop fun!</h6>
+						<h2>Shivtirth Water Park</h2>
+						<p>A world of wonder! Shivtirth Water Park promises endless thrills and magical moments for all ages!</p>
+						<a href="{% url 'enquire' %}" class="btn theme_btn button_hover">Book a Ticket</a>
+					</div>
+				</div>
+            </div>
+            <div class="hotel_booking_area position">
+                <div class="container">
+                    <div class="hotel_booking_table">
+                        <div class="col-md-15">
+                            <h2>Get<br> Your Ticket</h2>
+                            <p>Park with full experience and lots of things to wonder about living the life you always dreamed of in the actual reality.</p>
+                        </div>
+                        {% comment %} <div class="col-md-9">
+                            <div class="boking_table">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="col-md-3">
+                                            <h2>Get Your Ticket</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================Banner Area =================-->
+        
+        <!--================ Accomodation Area  =================-->
+        <section class="accomodation_area section_gap">
+            <div class="container">
+                <div class="section_title text-center">
+                    <h2 class="title_color">Hot Deals</h2>
+                    <p>Unbeatable deals you won't want to miss!</p>
+                </div>
+                <div class="row mb_30">
+                    {% for items in special_packages %}
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="{{ items.first_img.url }}" alt="">
+                                <button class="btn theme_btn button_hover" popovertarget="modal-{{ forloop.counter }}">Details</button>
+                            </div>
+                            <a href="#"><h4 class="sec_h4">{{ items.shr_title }}</h4></a>
+                            {% comment %} <h5>1000<small>Rs</small></h5> {% endcomment %}
+                            {% comment %} {% for item in special_packages %} {% endcomment %}
+                            <div id='modal-{{ forloop.counter }}' class='modil' style="background: url('{{ items.second_img.url }}') no-repeat center center/cover" popover>
+                                <div class='model'>
+                                    <h1>{{ items.title }}</h1>
+                                    <p>{{ items.desc }}<h3>{{ items.price }}<small>...</small></h3></p>
+                                    <button class="btn theme_btn button_hover" popovertarget="modal-{{ forloop.counter }}">Close</button>
+                                    <button class="btn theme_btn button_hover"><a href='{% url 'enquire' %}' style='color: white;'>Book Now</a></button>                      
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!--================ Accomodation Area  =================-->
+        
+        <!--================ Facilities Area  =================-->
+        <section class="facilities_area section_gap">
+            <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background="">  
+            </div>
+            <div class="container">
+                <div class="section_title text-center">
+                    <h2 class="title_w">Shivtirth Park Features</h2>
+                    <p>The ultimate water park experience with six exciting Features</p>
+                </div>
+                <div class="row mb_30">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-leaf"></i>Agro Tourism</h4>
+                            <p>Nestled amidst lush greenery and sprawling fields, Shivtirth offers a perfect escape from the hustle and bustle of city life.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-rocket"></i>Adventure Park</h4>
+                            <p>Shivtirth developed adventure aprk based on Mowgali jungle theme with 3D show and adventurous activities, nestled in a scenic valley of satpuda ranges.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-smile"></i>Amusement Park</h4>
+                            <p>Whether you are seeking thrills or family fun, Nagpur's amusement park promises an unforgettable experience for visitors of all ages!</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-map"></i>Boating Park</h4>
+                            <p>Experience leisure and excitement with our elegant Shikara or engage in active fun with our Kayaks and Pedal Boats. There's a watercraft for every enthusiast, ensuring unforgettable moments on the water.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-cloud"></i>Waterfall Rappelling</h4>
+                            <p>This activity lets you descend down the face of a stunning waterfall, surrounded by the roar of rushing water and the beauty of a natural landscape.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-drop"></i>Water Park</h4>
+                            <p>With a wide variety of attractions, top-notch amenities, and delightful dining options, this water park is the ultimate summer escape.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================ Facilities Area  =================-->
+        
+        <!--================ About History Area  =================-->
+        <section class="about_history_area section_gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 d_flex align-items-center">
+                        <div class="about_content ">
+                            <h2 class="title title_color">About Us <br>Our History<br>Mission & Vision</h2>
+                            <p><b>MISSION:</b> To provide a transformative outdoor learning experience that connects children with nature and agriculture, fostering courage, confidence, and creativity through hands-on activities and educational programs.</p>
+                            <p><b>VISION:</b> To inspire the next generation to embrace environmental stewardship and agricultural knowledge, nurturing a deep appreciation for nature and empowering them to thrive in a rapidly changing world.</p>
+                            <a href="#" class="button_hover theme_btn_two">Book Ticket</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="{% static 'image/new/1746637900134.jpg'%}" alt="img">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================ About History Area  =================-->
+        
+        <!--================ Stat Area  =================-->
+        <div class="stats-section">
+            <div class="states-container">
+                <div class="state-box">
+                    <i class="lnr lnr-smile"></i>
+                    <h2>100k+</h2>
+                    <p>Happy People</p>
+                </div>
+                <div class="state-box">
+                    <i class="lnr lnr-users"></i>
+                    <h2>150+</h2>
+                    <p>Activities</p>
+                </div>
+                <div class="state-box">
+                    <i class="lnr lnr-star"></i>
+                    <h2>4.7</h2>
+                    <p>Rating</p>
+                </div>
+                <div class="state-box">
+                    <i class="lnr lnr-bubble"></i>
+                    <h2>12k+</h2>
+                    <p>Reviews</p>
+                </div>
+            </div>
+        </div>
+        <!--================ Stat Area  =================-->
+
+        <!--================ Testimonial Area  =================-->
+        {% comment %} <section class="testimonial_area section_gap">
+            <div class="container">
+                <div class="section_title text-center">
+                    <h2 class="title_color">Testimonial from our Clients</h2>
+                    <p>The French Revolution constituted for the conscience of the dominant aristocratic class a fall from </p>
+                </div>
+                <div class="testimonial_slider owl-carousel">
+                    <div class="media testimonial_item">
+                        <img class="rounded-circle" src="{% static 'image/testtimonial-1.jpg'%}" alt="">
+                        <div class="media-body">
+                            <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
+                            <a href="#"><h4 class="sec_h4">Fanny Spencer</h4></a>
+                            <div class="star">
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star-half-o"></i></a>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="media testimonial_item">
+                        <img class="rounded-circle" src="{% static 'image/testtimonial-1.jpg'%}" alt="">
+                        <div class="media-body">
+                            <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
+                            <a href="#"><h4 class="sec_h4">Fanny Spencer</h4></a>
+                            <div class="star">
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star-half-o"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="media testimonial_item">
+                        <img class="rounded-circle" src="{% static 'image/testtimonial-1.jpg'%}" alt="">
+                        <div class="media-body">
+                            <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
+                            <a href="#"><h4 class="sec_h4">Fanny Spencer</h4></a>
+                            <div class="star">
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star-half-o"></i></a>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="media testimonial_item">
+                        <img class="rounded-circle" src="{% static 'image/testtimonial-1.jpg'%}" alt="">
+                        <div class="media-body">
+                            <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
+                            <a href="#"><h4 class="sec_h4">Fanny Spencer</h4></a>
+                            <div class="star">
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star-half-o"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> {% endcomment %}
+        <!--================ Testimonial Area  =================-->
+        
+        <!--================ Latest Blog Area  =================-->
+        <section class="latest_blog_area section_gap">
+            <div class="container">
+                <div class="section_title text-center">
+                    <h2 class="title_color">latest posts from blog</h2>
+                    <p>The French Revolution constituted for the conscience of the dominant aristocratic class a fall from </p>
+                </div>
+                <div class="row mb_30">
+                    {% for post in blog %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-recent-blog-post">
+                            <div class="thumb">
+                                <img class="img-fluid" src="{{ post.main_img.url }}" alt="post">
+                            </div>
+                            <div class="details">
+                                <div class="tags">
+                                    <a href="#" class="button_hover tag_btn">{{ post.category1 }}</a>
+                                    <a href="#" class="button_hover tag_btn">{{ post.category2 }}</a>
+                                    <a href="#" class="button_hover tag_btn">{{ post.category3 }}</a>
+                                </div>
+                                <a href="{% url 'detail' post.id %}"><h4 class="sec_h4">{{ post.title }}</h4></a>
+                                <p>{{ post.desc }}</p>
+                                <h6 class="date title_color">{{ post.date }}</h6>
+                            </div>	
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+            </div>
+        </section>
+        <!--================ Recent Area  =================-->
+    
+{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,239 @@
+{% extends "main/base.html" %}
+{% block title %} About Shivtirth {% endblock %}
+{% block content %}
+{% load static %}
+    <body>
+        <!--================Breadcrumb Area =================-->
+        <section class="breadcrumb_area">
+            <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
+            <div class="container">
+                <div class="page-cover text-center">
+                    <h2 class="page-cover-tittle">About Us</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">About</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <!--================Breadcrumb Area =================-->
+        
+        <!--================ About History Area  =================-->
+        <section class="about_history_area section_gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 d_flex align-items-center">
+                        <div class="about_content ">
+                            <h2 class="title title_color">About Us <br>Our History<br>Mission & Vision</h2>
+                            <p><b>MISSION:</b> To provide a transformative outdoor learning experience that connects children with nature and agriculture, fostering courage, confidence, and creativity through hands-on activities and educational programs.</p>
+                            <p><b>VISION:</b> To inspire the next generation to embrace environmental stewardship and agricultural knowledge, nurturing a deep appreciation for nature and empowering them to thrive in a rapidly changing world.</p>
+                            <a href="{% url 'enquire' %}" class="button_hover theme_btn_two">Book Ticket</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="{% static 'image/about_bg.jpg'%}" alt="img">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================ About History Area  =================-->
+<hr>
+        <!--================ More About Area  =================-->
+        <section class="about_history_area section_gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img class="img-fluid" src="{% static 'image/about_bg.jpg'%}" alt="img">
+                    </div>
+                    <div class="col-md-8 d_flex align-items-center">
+                        <div class="about_content " style='text-align: right';>
+                            <h2 class="title title_color">Discover Shivtirth <br>Your Ultimate Destination for Adventure, Learning, and Natural Beauty!</h2>
+                            <p>Shivtirth is an entertainment and learn passage to the most excellent blend of Aadishakti Water Park, Thrill Power Boating Park, Mowgali Adventure Park, Amusement, Agriculture, and Nature. Being one of its exceptional sorts of goal for get-away and relaxation, Shivtirth offers you the beautiful magnificence of Satpuda mountain beauty.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12 d_flex align-items-center">
+                        <div class="about_content ">
+                            <p>Our place Shivtirthis the God gift, amazing, natural place at Umari (Dam) Saoner, Nagpur (M.S.) well known for Agro, Aqua, Adventure, Air Tourism. It is located on ranges of Satpuda mountain and is surrounded by Dam, Forest and Valley. It is the destination for School Picnic family, Group Picnic and Functions on Hill station and is just 47km away from Nagpur on Baitul National High Way no. 47.</p>
+                            <p>Nowadays Shivtirth represents the Largest Plantations Centre of fruits in Vidarbha. The place is developed for various Agro, Aqua, Adventure, and Air activities for learning and fun. We organize school camps, curriculum-based educatinoal programs, team building programs, and various functions like birthdays, anniversaries, marriages, wed shootings, meetings, etc. within a limited budget.</p>
+                            <a href="{% url 'enquire' %}" class="button_hover theme_btn_two">Make Enquiry</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================ More About Area  =================-->
+        
+        <!--================ Facilities Area  =================-->
+        <section class="facilities_area section_gap">
+            <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background="">  
+            </div>
+            <div class="container">
+                <div class="section_title text-center">
+                    <h2 class="title_w">Shivtirth Park Features</h2>
+                    <p>The ultimate water park experience with six exciting Features</p>
+                </div>
+                <div class="row mb_30">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-leaf"></i>Agro Tourism</h4>
+                            <p>Nestled amidst lush greenery and sprawling fields, Shivtirth offers a perfect escape from the hustle and bustle of city life.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-rocket"></i>Adventure Park</h4>
+                            <p>Shivtirth developed adventure aprk based on Mowgali jungle theme with 3D show and adventurous activities, nestled in a scenic valley of satpuda ranges.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-smile"></i>Amusement Park</h4>
+                            <p>Whether you are seeking thrills or family fun, Nagpur's amusement park promises an unforgettable experience for visitors of all ages!</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-map"></i>Boating Park</h4>
+                            <p>Experience leisure and excitement with our elegant Shikara or engage in active fun with our Kayaks and Pedal Boats. There's a watercraft for every enthusiast, ensuring unforgettable moments on the water.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-cloud"></i>Waterfall Rappelling</h4>
+                            <p>This activity lets you descend down the face of a stunning waterfall, surrounded by the roar of rushing water and the beauty of a natural landscape.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-drop"></i>Water Park</h4>
+                            <p>With a wide variety of attractions, top-notch amenities, and delightful dining options, this water park is the ultimate summer escape.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================ Facilities Area  =================-->
+
+        {% comment %} <!--================ Facilities Area  =================-->
+        <section class="facilities_area section_gap">
+            <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background="">  
+            </div>
+            <div class="container">
+                <div class="section_title text-center">
+                    <h2 class="title_w">Royal Facilities</h2>
+                    <p>Who are in extremely love with eco friendly system.</p>
+                </div>
+                <div class="row mb_30">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-dinner"></i>Restaurant</h4>
+                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-bicycle"></i>Sports CLub</h4>
+                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-shirt"></i>Swimming Pool</h4>
+                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-car"></i>Rent a Car</h4>
+                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-construction"></i>Gymnesium</h4>
+                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="facilities_item">
+                            <h4 class="sec_h4"><i class="lnr lnr-coffee-cup"></i>Bar</h4>
+                            <p>Usage of the Internet is becoming more common due to rapid advancement of technology and power.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================ Facilities Area  =================--> {% endcomment %}
+        
+        {% comment %} <!--================ Testimonial Area  =================-->
+        <section class="testimonial_area section_gap">
+            <div class="container">
+                <div class="section_title text-center">
+                    <h2 class="title_color">Testimonial from our Clients</h2>
+                    <p>The French Revolution constituted for the conscience of the dominant aristocratic class a fall from </p>
+                </div>
+                <div class="testimonial_slider owl-carousel">
+                    <div class="media testimonial_item">
+                        <img class="rounded-circle" src="{% static 'image/testtimonial-1.jpg'%}" alt="">
+                        <div class="media-body">
+                            <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
+                            <a href="#"><h4 class="sec_h4">Fanny Spencer</h4></a>
+                            <div class="star">
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star-half-o"></i></a>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="media testimonial_item">
+                        <img class="rounded-circle" src="{% static 'image/testtimonial-1.jpg'%}" alt="">
+                        <div class="media-body">
+                            <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
+                            <a href="#"><h4 class="sec_h4">Fanny Spencer</h4></a>
+                            <div class="star">
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star-half-o"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="media testimonial_item">
+                        <img class="rounded-circle" src="{% static 'image/testtimonial-1.jpg'%}" alt="">
+                        <div class="media-body">
+                            <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
+                            <a href="#"><h4 class="sec_h4">Fanny Spencer</h4></a>
+                            <div class="star">
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star-half-o"></i></a>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="media testimonial_item">
+                        <img class="rounded-circle" src="{% static 'image/testtimonial-1.jpg'%}" alt="">
+                        <div class="media-body">
+                            <p>As conscious traveling Paupers we must always be concerned about our dear Mother Earth. If you think about it, you travel across her face, and She is the </p>
+                            <a href="#"><h4 class="sec_h4">Fanny Spencer</h4></a>
+                            <div class="star">
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star-half-o"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================ Testimonial Area  =================--> {% endcomment %}
+        
+{% endblock %}
+    </body>
+</html>

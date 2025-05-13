@@ -1,0 +1,44 @@
+{% extends "main/base.html" %}
+{% block title %} Single Blog {% endblock %}
+{% block content %}
+{% load static %}
+    <body>
+        <!--================Blog Area =================-->
+        <section class="blog_area single-post-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 posts-list">
+                        
+                        <div class="comments-area">
+                            <div class="comment-list">
+                                <div class="single-comment justify-content-between d-flex">
+                                    <div class="user justify-content-between d-flex">
+                                        <div class="desc">
+                                            <h5><b>Are you sure you want to delete the comment?</b></h5>
+                                        </div>
+                                    </div>
+                                    <form method='POST' enctype='multipart/form-data'>
+                                        {% csrf_token %}
+                                          <button style="padding: 10px; margin: 5px" type='submit' class='primary-btn button_hover'>YES</button>
+                                          <a href="{% url 'detail' comment.blog.id %}">Cancel</a>
+                                    </form>
+                                    
+                                    
+                                    
+                                    {% comment %} <div class="reply-btn">
+                                        {% if items.name == request.user %}
+                                            <a href="" class="btn-reply text-uppercase">Delete</a>
+                                        {% endif %}
+                                        {% endfor %} 
+                                    </div>
+                                </div><hr><hr> {% endcomment %}
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================Blog Area =================-->
+        
+{% endblock %}
+    </body>
+</html>

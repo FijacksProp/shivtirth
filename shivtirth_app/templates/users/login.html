@@ -1,0 +1,76 @@
+{% extends "main/base.html" %}
+{% block title %} Login {% endblock %}
+{% block content %}
+{% load static %}
+    <body>
+        <!--================Breadcrumb Area =================-->
+        <section class="breadcrumb_area">
+            <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
+            <div class="container">
+                <div class="page-cover text-center">
+                    <h2 class="page-cover-tittle">LOGIN</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li class="active">Login</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <!--================Breadcrumb Area =================-->
+        
+        <!--================Contact Area =================-->
+        <section class="contact_area section_gap">
+            <div class="container">
+                {% comment %} <div id="mapBox" class="mapBox" 
+                    data-lat="40.701083" 
+                    data-lon="-74.1522848" 
+                    data-zoom="13" 
+                    data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
+                    data-mlat="40.701083"
+                    data-mlon="-74.1522848">
+                </div> {% endcomment %}
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="contact_info">
+                            <div class="info_item">
+                                <i class="lnr lnr-home"></i>
+                                <h6>Umri (Dam) Saoner, Nagpur</h6>
+                                <p>(MS) Pandhurna Highway</p>
+                            </div>
+                            <div class="info_item">
+                                <i class="lnr lnr-phone-handset"></i>
+                                <h6><a href="#">+91 8605362212 <br> +91 8275737577</a></h6>
+                                {% comment %} <p>Mon to Fri 9am to 6 pm</p> {% endcomment %}
+                            </div><br>
+                            <div class="info_item">
+                                <i class="lnr lnr-envelope"></i>
+                                <h6><a href="#">info@shivtirth.com</a></h6>
+                                <p>Send us your query anytime!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class='signup-section'>
+                            <form class="signup-form" method="POST">
+                                {% csrf_token %}
+                                <div class="farm-group">
+                                    <label for="name">Username</label>
+                                    <input type="text" id="name" name="username" placeholder="Enter a username" required>
+                                </div>
+                                <div class="farm-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                                </div>
+                                <button type="submit" class="sign-btn">Login</button>
+                                <p>Don't have an account? <a href="{% url 'signup' %}">Signup</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================Contact Area =================-->
+        
+{% endblock %}
+    </body>
+</html>

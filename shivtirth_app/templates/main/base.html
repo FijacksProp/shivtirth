@@ -1,0 +1,180 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{% static 'image/banner/1746901892601.png'%}" type="image/png">
+        <title>{% block title %}Shivtirth Water Park{% endblock %}</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+        <link rel="stylesheet" href="{% static 'vendors/linericon/style.css'%}">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}">
+        <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css'%}">
+        <link rel="stylesheet" href="{% static 'vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.css'%}">
+        <link rel="stylesheet" href="{% static 'vendors/nice-select/css/nice-select.css'%}">
+        <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css'%}">
+        <link rel="stylesheet" href="{% static 'vendors/lightbox/simpleLightbox.css'%}">
+        <!-- main css -->
+        <link rel="stylesheet" href="{% static 'css/style.css'%}">
+        <link rel="stylesheet" href="{% static 'css/responsive.css'%}">
+    </head>
+
+    <!--================Header Area =================-->
+    <header class="header_area">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <a class="navbar-brand logo_h" href="{% url 'index' %}"><img src="{% static 'image/banner/1746901892601.png'%}" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                {% if request.user.is_authenticated %}
+                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav menu_nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li> 
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'packages' %}">Packages</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'gallery' %}">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'blog' %}">Blog</a></li>
+                        {% comment %} <li class="nav-item submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="{% url 'blog' %}">Blog</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{% url 'blog-single' %}">Blog Details</a></li>
+                            </ul>
+                        </li>  {% endcomment %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">logout</a></li>
+                    </ul>
+                </div>
+                {% else %}
+                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav menu_nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li> 
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'packages' %}">Packages</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'gallery' %}">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'blog' %}">Blog</a></li>
+                        {% comment %} <li class="nav-item submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="{% url 'blog' %}">Blog</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{% url 'blog-single' %}">Blog Details</a></li>
+                            </ul>
+                        </li>  {% endcomment %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'signup' %}">Signup</a></li>
+                    </ul>
+                </div>
+                {% endif %} 
+            </nav>
+        </div>
+    </header>
+    <!--================Header Area =================-->
+    {% block content %}{% endblock %}
+
+    <!--================ start footer Area  =================-->	
+    <footer class="footer-area section_gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3  col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h6 class="footer_title">Discover Shivtirth</h6>
+                        <p>A breathtaking escape nestled in the Satpuda mountains, blending nature's beauty with thrilling adventures, aqua fun, and serene agro-tourism - just 47km from Nagpur!</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h6 class="footer_title">Navigation Links</h6>
+                        <div class="row">
+                            <div class="col-4">
+                                <ul class="list_style">
+                                    <li><a href="{% url 'index' %}">Home</a></li>
+                                    <li><a href="{% url 'about' %}">About</a></li>
+                                    <li><a href="{% url 'packages' %}">Packages</a></li>
+                                    <li><a href="#">Portfolio</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-4">
+                                <ul class="list_style">
+                                    <li><a href="#">Team</a></li>
+                                    <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                                    <li><a href="{% url 'blog' %}">Blog</a></li>
+                                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                                </ul>
+                            </div>										
+                        </div>							
+                    </div>
+                </div>							
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h6 class="footer_title">Park Update</h6>
+                        <p>Stay in the loop with the latest events, rides, and special offers at Shivtirth Water Park</p>		
+                        <div id="mc_embed_signup">
+                            <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
+                                <div class="input-group d-flex flex-row">
+                                    <input name="EMAIL" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
+                                    <button class="btn sub-btn"><span class="lnr lnr-location"></span></button>		
+                                </div>									
+                                <div class="mt-10 info"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-footer-widget instafeed">
+                        <h6 class="footer_title">InstaFeed</h6>
+                        <ul class="list_style instafeed d-flex flex-wrap">
+                            <li><img src="{% static 'image/new/1746637899641.jpeg'%}" style="width:57px; height: 57px;" alt=""></li>
+                            <li><img src="{% static 'image/new/1746637899694.jpeg'%}" style="width:57px; height: 57px;" alt=""></li>
+                            <li><img src="{% static 'image/new/1746637899748.jpeg'%}" style="width:57px; height: 57px;" alt=""></li>
+                            <li><img src="{% static 'image/new/1746637899802.jpeg'%}" style="width:57px; height: 57px;" alt=""></li>
+                            <li><img src="{% static 'image/new/1746637899838.jpeg'%}" style="width:57px; height: 57px;" alt=""></li>
+                            <li><img src="{% static 'image/new/1746646162981.jpg'%}" style="width:57px; height: 57px;" alt=""></li>
+                            <li><img src="{% static 'image/new/1746637899748.jpeg'%}" style="width:57px; height: 57px;" alt=""></li>
+                            <li><img src="{% static 'image/new/1746637899641.jpeg'%}" style="width:57px; height: 57px;" alt=""></li>
+                        </ul>
+                    </div>
+                </div>						
+            </div>
+            <div class="border_line"></div>
+            <div class="row footer-bottom d-flex justify-content-between align-items-center">
+                <p class="col-lg-8 col-sm-12 footer-text m-0">
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_blank">FijacksProp.</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                <div class="col-lg-4 col-sm-12 footer-social">
+                    <a href="https://m.facebook.com/shivtirthwaterpark/"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/shivtirthbestwaterpark/"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@Shivtirthpicnicspot"><i class="fa fa-youtube"></i></a>
+                    <a href="https://x.com/Shivtirthnagpur"><i class="fa fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--================ End footer Area  =================-->
+    
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'js/jquery-3.2.1.min.js'%}"></script>
+    <script src="{% static 'js/popper.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'vendors/owl-carousel/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'js/jquery.ajaxchimp.min.js'%}"></script>
+    <script src="{% static 'js/mail-script.js'%}"></script>
+    <script src="{% static 'vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.js'%}"></script>
+    <script src="{% static 'vendors/nice-select/js/jquery.nice-select.js'%}"></script>
+    <script src="{% static 'js/mail-script.js'%}"></script>
+    <script src="{% static 'js/stellar.js'%}"></script>
+    <script src="{% static 'vendors/lightbox/simpleLightbox.min.js'%}"></script>
+    <script src="{% static 'js/custom.js'%}"></script>
+    <script src="{% static 'vendors/imagesloaded/imagesloaded.pkgd.min.js'%}"></script>
+    <script src="{% static 'vendors/isotope/isotope-min.js'%}"></script>
+
+</html>

@@ -1,0 +1,121 @@
+{% extends "main/base.html" %}
+{% block title %} About Shivtirth {% endblock %}
+{% block content %}
+{% load static %}
+    <body>
+        <!--================Breadcrumb Area =================-->
+        <section class="breadcrumb_area">
+            <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
+            <div class="container">
+                <div class="page-cover text-center">
+                    <h2 class="page-cover-tittle">Make Enquiry</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">Enquiry</li>
+                    </ol><br>
+                    <ol class="breadcrumb">
+                        <li>Get full detail for each booking by contacting us.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <!--================Breadcrumb Area =================-->
+        
+        <!--================Contact Area =================-->
+        <section class="contact_area section_gap">
+            <div class="container">
+                {% comment %} <div id="mapBox" class="mapBox" 
+                    data-lat="40.701083" 
+                    data-lon="-74.1522848" 
+                    data-zoom="13" 
+                    data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
+                    data-mlat="40.701083"
+                    data-mlon="-74.1522848">
+                </div> {% endcomment %}
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="contact_info">
+                            <div class="info_item">
+                                <i class="lnr lnr-home"></i>
+                                <h6>Umri (Dam) Saoner, Nagpur</h6>
+                                <p>(MS) Pandhurna Highway</p>
+                            </div>
+                            <div class="info_item">
+                                <i class="lnr lnr-phone-handset"></i>
+                                <h6><a href="#">+91 8605362212 <br> +91 8275737577</a></h6>
+                                {% comment %} <p>Mon to Fri 9am to 6 pm</p> {% endcomment %}
+                            </div><br>
+                            <div class="info_item">
+                                <i class="lnr lnr-envelope"></i>
+                                <h6><a href="#">info@shivtirth.com</a></h6>
+                                <p>Send us your query anytime!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <form class="row contact_form" action="" method="POST" id="contactForm" novalidate="novalidate">
+                            {% csrf_token %}
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    {{ enquire_form.pack }}
+                                    {% comment %} <select class="wide">
+                                        <option data-display="Adult">Water Park</option>
+                                        <option value="1">Adhishakti Water Park</option>
+                                        <option value="2">Agro Tourism</option>
+                                        <option value="3">Boating</option>
+                                    </select> {% endcomment %}
+                                </div>
+                                <div class="form-group">
+                                    {{ enquire_form.phone }}
+                                </div>
+                                <div class="form-group">
+                                    {{ enquire_form.number }}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ enquire_form.content }}
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-right">
+                                <button type="submit" value="submit" class="btn theme_btn button_hover">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    {% comment %} {% for item in enquire %}
+                    <div class="en-card">
+                        <h2>Submitted Info<br><small>{{ item.date_created }}</small></h2>
+                        <!--<div class='en-field'>
+                            <label>Name</label>
+                            <span>{{ item.user.first_name }}</span>
+                        </div>
+                        <div class='en-field'>
+                            <label>Email</label>
+                            <span>{{ item.user.email }}</span>
+                        </div>-->
+                        <div class='en-field'>
+                            <label>Phone</label>
+                            <span>+{{ item.phone }}</span>
+                        </div>
+                        <div class='en-field'>
+                            <label>Package</label>
+                            <span style='text-transform: uppercase;'><b>{{ item.pack }}</b></span><hr>
+                            <p>Message Recorded! <br>Expect response within 12 hours.</p>
+                        </div>
+                    </div>
+                    {% endfor %} {% endcomment %}
+
+                    <div class="info_item">
+                        <span>Boating Park Time - 10:00AM to 2:00PM ...
+                        || ... Water Park Time - 10:00AM to 4:00PM ...
+                        || ... Amusement/Adventure - 4:00PM to 6:00PM</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================Contact Area =================-->
+        
+{% endblock %}
+    </body>
+</html>

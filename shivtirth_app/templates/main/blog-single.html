@@ -1,0 +1,277 @@
+{% extends "main/base.html" %}
+{% block title %} {{ detail.title }} {% endblock %}
+{% block content %}
+{% load static %}
+    <body>
+        <!--================Breadcrumb Area =================-->
+        <section class="breadcrumb_area blog_banner_two">
+            <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
+            <div class="container">
+                <div class="page-cover text-center">
+                    <h2 class="page-cover-tittle f_48">{{ detail.title }}</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'blog' %}">Blog</a></li>
+                        <li class="active">Detail.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <!--================Breadcrumb Area =================-->
+        
+        <!--================Blog Area =================-->
+        <section class="blog_area single-post-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 posts-list">
+                        <div class="single-post row">
+                            <div class="col-lg-12">
+                                <div class="feature-img">
+                                    <img class="img-fluid" src="{{ detail.main_img.url }}" alt="">
+                                </div>									
+                            </div>
+                            <div class="col-lg-3  col-md-3">
+                                <div class="blog_info text-right">
+                                    <div class="post_tag">
+                                        <a href="">{{ detail.category1 }},</a>
+                                        <a href="">{{ detail.category2 }},</a>
+                                        <a href="">{{ detail.category3 }},</a>
+                                    </div>
+                                    <ul class="blog_meta list_style">
+                                        <li><a href="">{{ detail.author }}<i class="lnr lnr-user"></i></a></li>
+                                        <li><a href="">{{ detail.date }}<i class="lnr lnr-calendar-full"></i></a></li>
+                                        {% comment %} <li><a href="#">1.2M Views<i class="lnr lnr-eye"></i></a></li> {% endcomment %}
+                                        <li><a href="#">
+                                        {% if detail.comment_count < 2 %}
+                                            {{ detail.comment_count }}
+                                        {% else %}
+                                            {{ detail.comment_count }}
+                                        {% endif %} Comments<i class="lnr lnr-bubble"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-md-9 blog_details">
+                                <h2>{{ detail.title }}</h2><br>
+                                <p>{{ detail.content|safe }}</p>
+                                {% comment %} <p class="excert">
+                                    MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.
+                                </p>
+                                <p>
+                                    Boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed
+                                </p>
+                                <p>
+                                    Boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed
+                                </p> {% endcomment %}
+                            </div>
+                            {% comment %} <div class="col-lg-12">
+                                <div class="quotes">
+                                    MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training.										
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <img class="img-fluid" src="{% static 'image/blog/post-img1.jpg'%}" alt="">
+                                    </div>
+                                    <div class="col-6">
+                                        <img class="img-fluid" src="{% static 'image/blog/post-img2.jpg'%}" alt="">
+                                    </div>	
+                                    <div class="col-lg-12 mt-25">
+                                        <p>
+                                            MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower.
+                                        </p>
+                                        <p>
+                                            MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower.
+                                        </p>											
+                                    </div>									
+                                </div>
+                            </div> {% endcomment %}
+                        </div>
+                        <div class="comments-area">
+                            {% if detail.comment_count < 2 %}
+                                <h4>{{ detail.comment_count }} Comment</h4>
+                            {% else %}
+                                <h4>{{ detail.comment_count }} Comments</h4>
+                            {% endif %}
+
+                            {% for items in detail.comments.all %}
+                            <div class="comment-list">
+                                <div class="single-comment justify-content-between d-flex">
+                                    <div class="user justify-content-between d-flex">
+                                        {% comment %} <div class="thumb">
+                                            <img src="{% static 'image/blog/c1.jpg'%}" alt="">
+                                        </div> {% endcomment %}
+                                        <div class="desc">
+                                            <h5><b>{{ items.name.first_name}} {{ items.name.last_name}}</b></h5>
+                                            <p class="date">{{ items.date_created }}</p>
+                                            <p class="comment">
+                                                {{ items.content }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {% if items.name == request.user %}
+                                    <div class="reply-btn">
+                                            <a href="" class="btn-reply text-uppercase"><span class="lnr lnr-trash"></span></a>
+                                    </div>
+                                    {% endif %}
+                                </div><hr><hr>
+                            </div>	
+                            {% endfor %}
+
+                        </div>
+                        <div class="comment-form">
+                            <h4>COMMENT</h4>
+                            <form method="post">
+                            {% if request.user.is_authenticated %}
+                            {% csrf_token %}
+                                {% comment %} <div class="form-group form-inline">
+                                  <div class="form-group col-lg-6 col-md-6 name">
+                                    <input type="text" class="form-control" id="name" placeholder="Enter Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Name'">
+                                  </div>
+                                  <div class="form-group col-lg-6 col-md-6 email">
+                                    <input type="email" class="form-control" id="email" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
+                                  </div>										
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Subject'">
+                                </div> {% endcomment %}
+                                <div class="form-group">
+                                    {{ c_form.content|safe }}
+                                </div>
+                                <button type="submit" value="submit" class="primary-btn button_hover">Post Comment</button>
+                            </form>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="blog_right_sidebar">
+                            {% comment %} <aside class="single_sidebar_widget search_widget">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search Posts">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button"><i class="lnr lnr-magnifier"></i></button>
+                                    </span>
+                                </div><!-- /input-group -->
+                                <div class="br"></div>
+                            </aside> {% endcomment %}
+                            <aside class="single_sidebar_widget author_widget">
+                                {% comment %} <img class="author_img rounded-circle" src="{% static 'image/blog/author.png'%}" alt="">
+                                <h4>Charlie Barber</h4> {% endcomment %}
+                                <p style="font-size: 20px">Shivtirth Blog Writer</p>
+                                <div class="social_icon">
+                                    <a href="https://m.facebook.com/shivtirthwaterpark/"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://x.com/Shivtirthnagpur"><i class="fa fa-twitter"></i></a>
+                                    <a href="https://www.instagram.com/shivtirthbestwaterpark/"><i class="fa fa-instagram"></i></a>
+                                    <a href="https://www.youtube.com/@Shivtirthpicnicspot"><i class="fa fa-youtube"></i></a>
+                                </div>
+                                <p>This section showcases essential hydration gear and accessories 
+                                    designed to keep you refreshed and energized during outdoor adventures and activites.</p>
+                                <div class="br"></div>
+                            </aside>
+                            <aside class="single_sidebar_widget popular_post_widget">
+                                <h3 class="widget_title">Latest Posts</h3>
+                                {% for post in blog %}
+                                <div class="media post_item">
+                                    <img src="{{ post.main_img.url }}" alt="post">
+                                    <div class="media-body">
+                                        <a href="blog-details.html"><h3>{{ post.title }}</h3></a>
+                                        <p>{{ post.date }}</p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                <div class="br"></div>
+                            </aside>
+                            <aside class="single_sidebar_widget ads_widget">
+                                <a href="#"><img class="img-fluid" src="{% static 'image/blog/add.jpg'%}" alt=""></a>
+                                <div class="br"></div>
+                            </aside>
+                            {% comment %} <aside class="single_sidebar_widget post_category_widget">
+                                <h4 class="widget_title">Post Catgories</h4>
+                                <ul class="list_style cat-list">
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between">
+                                            <p>Technology</p>
+                                            <p>37</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between">
+                                            <p>Lifestyle</p>
+                                            <p>24</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between">
+                                            <p>Fashion</p>
+                                            <p>59</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between">
+                                            <p>Art</p>
+                                            <p>29</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between">
+                                            <p>Food</p>
+                                            <p>15</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between">
+                                            <p>Architecture</p>
+                                            <p>09</p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between">
+                                            <p>Adventure</p>
+                                            <p>44</p>
+                                        </a>
+                                    </li>															
+                                </ul>
+                                <div class="br"></div>
+                            </aside> {% endcomment %}
+                            <aside class="single-sidebar-widget newsletter_widget">
+                                <h4 class="widget_title">Newsletter</h4>
+                                <p>
+                                    Stay in the loop with the latest events, rides, and special offers at Shivtirth Water Park
+                                </p>
+                                <div class="form-group d-flex flex-row">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                                        </div>
+                                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Enter email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'">
+                                    </div>
+                                    <a href="#" class="bbtns">Subcribe</a>
+                                </div>	
+                                <p class="text-bottom">You can unsubscribe at any time</p>	
+                                <div class="br"></div>							
+                            </aside>
+                            {% comment %} <aside class="single-sidebar-widget tag_cloud_widget">
+                                <h4 class="widget_title">Tag Clouds</h4>
+                                <ul class="list_style">
+                                    <li><a href="#">Technology</a></li>
+                                    <li><a href="#">Fashion</a></li>
+                                    <li><a href="#">Architecture</a></li>
+                                    <li><a href="#">Fashion</a></li>
+                                    <li><a href="#">Food</a></li>
+                                    <li><a href="#">Technology</a></li>
+                                    <li><a href="#">Lifestyle</a></li>
+                                    <li><a href="#">Art</a></li>
+                                    <li><a href="#">Adventure</a></li>
+                                    <li><a href="#">Food</a></li>
+                                    <li><a href="#">Lifestyle</a></li>
+                                    <li><a href="#">Adventure</a></li>
+                                </ul>
+                            </aside> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================Blog Area =================-->
+        
+{% endblock %}
+    </body>
+</html>
