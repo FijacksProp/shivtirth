@@ -7,8 +7,8 @@ from django_ckeditor_5.fields import CKEditor5Field # type: ignore
 class Special_Packages(models.Model):
     title = models.CharField(max_length=50, default='Full Title')
     shr_title = models.CharField(max_length=20, default='Short Title')
-    first_img = models.ImageField(default='image/new/31150.jpg', upload_to='cloud_folder', null=True, blank=True)
-    second_img = models.ImageField(default='image/new/31150.jpg', upload_to='cloud_folder', null=True, blank=True)
+    first_img = models.ImageField(default='image/new/31150.jpg', upload_to='cloud_folder/', null=True, blank=True)
+    second_img = models.ImageField(default='image/new/31150.jpg', upload_to='cloud_folder/', null=True, blank=True)
     desc = models.CharField(max_length=255, default='Description')
     price = models.IntegerField()
     date_created = models.DateTimeField(auto_now=False, auto_now_add=False)
@@ -20,7 +20,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=50, default='Write a Title')
     desc = models.CharField(max_length=70, default='description')
-    main_img = models.ImageField(default='image/new/31150.jpg', upload_to='cloud_folder', null=True, blank=True)
+    main_img = models.ImageField(default='image/new/31150.jpg', upload_to='cloud_folder/', null=True, blank=True)
     category1 = models.CharField(max_length=20, null=True, blank=True, choices=[
         ('agro tourism', 'Agro Tourism'),
         ('adventure', 'Adventure'),
@@ -79,7 +79,7 @@ class Comment(models.Model):
 
 class Packages(models.Model):
     name = models.CharField(max_length=50)
-    img = models.ImageField(default='image/new/31150.jpg', upload_to='cloud_folder', null=True, blank=True)
+    img = models.ImageField(default='image/new/31150.jpg', upload_to='cloud_folder/', null=True, blank=True)
     desc = models.CharField(max_length=150)
     price = models.IntegerField()
     date_created = models.DateTimeField(default=now)
@@ -115,8 +115,8 @@ class Enquire(models.Model):
 
 class Gallery(models.Model):
     img_name = models.CharField(max_length=50, null=True, blank=True)
-    dis_img = models.ImageField(default='image/new/31150.jpg', upload_to='cloud_folder', null=True, blank=True)
-    img = models.ImageField(default='image/new/31150.jpg', upload_to='cloud_folder', null=True, blank=True)
+    dis_img = models.ImageField(default='image/new/31150.jpg', upload_to='cloud_folder/', null=True, blank=True)
+    img = models.ImageField(default='image/new/31150.jpg', upload_to='cloud_folder/', null=True, blank=True)
     date_created = models.DateTimeField(default=now)
 
     def __str__(self):
