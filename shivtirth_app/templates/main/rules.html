@@ -1,5 +1,5 @@
 {% extends "main/base.html" %}
-{% block title %} About Shivtirth {% endblock %}
+{% block title %} Shivtirth Rules {% endblock %}
 {% block content %}
 {% load static %}
     <body>
@@ -8,81 +8,62 @@
             <div class="overlay bg-parallax" data-stellar-ratio="0.8" data-stellar-vertical-offset="0" data-background=""></div>
             <div class="container">
                 <div class="page-cover text-center">
-                    <h2 class="page-cover-tittle">Contact Us</h2>
+                    <h2 class="page-cover-tittle">Rules and Regulations</h2>
                     <ol class="breadcrumb">
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active">Contact Us</li>
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li class="active">Rules</li>
                     </ol>
                 </div>
             </div>
         </section>
         <!--================Breadcrumb Area =================-->
         
-        <!--================Contact Area =================-->
-        <section class="contact_area section_gap">
+        <!--================ About History Area  =================-->
+        <section class="about_history_area section_gap">
             <div class="container">
-                {% comment %} <div id="mapBox" class="mapBox" 
-                    data-lat="40.701083" 
-                    data-lon="-74.1522848" 
-                    data-zoom="13" 
-                    data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
-                    data-mlat="40.701083"
-                    data-mlon="-74.1522848">
-                </div> {% endcomment %}
                 <div class="row">
-                    <div class="col-md-3">
-                        <div class="contact_info">
-                            <div class="info_item">
-                                <i class="lnr lnr-home"></i>
-                                <h6>Umri (Dam) Saoner, Nagpur</h6>
-                                <p>(MS) Pandhurna Highway</p>
-                            </div>
-                            <div class="info_item">
-                                <i class="lnr lnr-phone-handset"></i>
-                                <h6><a href="#">+91 8605362212 <br> +91 8275737577</a></h6>
-                                {% comment %} <p>Mon to Fri 9am to 6 pm</p> {% endcomment %}
-                            </div><br>
-                            <div class="info_item">
-                                <i class="lnr lnr-envelope"></i>
-                                <h6><a href="#">info@shivtirth.com</a></h6>
-                                <p>Send us your query anytime!</p>
-                            </div>
+                    <div class="col-md-6 d_flex align-items-center">
+                        <div class="about_content ">
+                            <h2 class="title title_color">Rules & <br>Regulations</h2>
+                            <p><b>SUPERVISION:</b> Children under the age of 12 must be accompanied by an adult (18 years or older) at all times within the park premises.</p>
+                            <p><b>ATTIRE:</b> Guests with contagious diseases, open sores, or bandages are not permitted in the pools or attractions. If you have any health concerns, please consult with park staff before entering.</p>
+                            <p><b>HEALTH & SAFETY:</b> Proper swim attire must be worn at all times. Street clothes, including jeans and pants with buttons, are not permitted on water slides or attractions.</p>
+                            <p><b>HEIGHT RESTRICTIONS:</b> Some attractions have height and weight restrictions for safety reasons. Please check posted signs or inquire with staff for specific requirements.</p>
+                            <p><b>DIVING:</b> Diving is only permitted in designated areas. Please do not dive into shallow water or off of slides.</p>
+                            <p><b>FOOD & BEVERAGE:</b> Outside food and beverage are not allowed in the park. However, we have a variety of dining options available for your convenience.</p>
+                            <p><b>ALCOHOL & DRUGS:</b> The consumption of alcohol or drugs that impair judgment is strictly prohibited within the park premises.</p>
+                            <p><b>QUEUE ETIQUETTE:</b> Please respect others in line and refrain from cutting or saving spots. Line jumping may result in removal from the park without refund.</p>
+                            <p><b>PERSONAL BELONGINGS:</b> Lockers are available for rent to secure your personal belongings. The park is not responsible for lost or stolen items.</p>
+                            <p><b>PHOTOGRAPHY & VIDEO:</b> Photography and videography are permitted for personal use only. Commercial or professional equipment is not allowed without prior authorization from park management.</p>
+                            <p><b>INCLEMENT WEATHER:</b> In the event of lightning or severe weather, some attractions may be temporarily closed for safety reasons. Please follow instructions from park staff during such situations.</p>
+                            <p><b>FIRST AID:</b> If you require first aid assistance, please notify the nearest staff member immediately.</p>
+                            <p><b>TICKET VALIDITY:</b> Entry is restricted to one person per ticket, which is valid only for a specified date and time.</p>
+                            <p><b>OPERATING HOURS:</b> The water park operates from 9:00 AM to 6:00 PM.</p>
+                            <p><b>NON-TRANSFERABLE TICKETS:</b> Tickets are non-transferable and non-refundable.</p>
+                            <p><b>SECURITY CHECK:</b> All items are subject to a security check at the point of entry.</p>
+                            <p><b>CONDUCT:</b> Do not use foul language or engage in unsafe or offensive behavior. Show courtesy to fellow park guests and service staff.</p>
+                            <p><b>SWIMWEAR REQREMENTS:</b> Only Polyester or Nylon costumes (t-shirts, shorts, Bermudas, three-fourths, or swimsuits) are permitted on water rides.</p>
+                            <p><b>PROHIBITED ATTIRE:</b> Sarees, churidars/salwars, dupatta, formal pants, shirts, burkhas/pardas, school uniforms, jeans, cargos, and indecent attires are not allowed inside the water park.</p>
+                            <p><b>SCARFS/SHAWLS:</b> Scarfs or shawls are not allowed on rides for safety reasons.</p>
+                            <p><b>SAFETY INSTRUCTIONS:</b> Guests are advised to follow safety instructions displayed on boards. Management is not responsible for injuries/accidents caused by guest negligence.</p>
+                            <p><b>NO DIVING:</b> Diving into pools is prohibited as the pools are shallow.</p>
+                            <p><b>HEALTH PRECAUTIONS:</b> Pregnant women, heart patients, and those prone to epilepsy should avoid fast or adventurous rides.</p>
+                            <p><b>PARENTAL SUPERVISION:</b> Parents are advised to monitor their children closely.</p>
+                            <p><b>RIDE RESTRICTIONS:</b> Guests below certain heights and above specific weights may not be permitted on certain rides for safety reasons.</p>
+                            <p><b>RIDE CLOSURE:</b> The management reserves the right to close any ride at any time for safety or technical reasons without prior notice.</p>
+                            <p><b>SMOKING:</b> Smoking is prohibited in common areas of the park.</p>
+                            <p><b>PETS:</b> Pet animals are not allowed inside the park.</p>
+                            <a href="{% url 'enquire' %}" class="button_hover theme_btn_two">Book Ticket</a>
                         </div>
                     </div>
-                    <div class="col-md-9">
-                        <form class="row contact_form" action="" method="POST" id="contactForm" novalidate="novalidate">
-                            {% csrf_token %}
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    {{ contact_form.name }}
-                                </div>
-                                <div class="form-group">
-                                    {{ contact_form.email }}
-                                </div>
-                                <div class="form-group">
-                                    {{ contact_form.subject }}
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    {{ contact_form.content }}
-                                </div>
-                            </div>
-                            <div class="col-md-12 text-right">
-                                <button type="submit" value="submit" class="btn theme_btn button_hover">Send Message</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="info_item" style='margin-left: 20px;'>
-                        <span>Boating Park Time - 10:00AM to 2:00PM ...
-                        || ... Water Park Time - 10:00AM to 4:00PM ...
-                        || ... Amusement/Adventure - 4:00PM to 6:00PM</span>
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="{% static 'image/about_bg.jpg'%}" alt="img">
                     </div>
                 </div>
             </div>
-        </section>
-        <!--================Contact Area =================-->
-        
+        </section>        
+        <!--================ About History Area  =================-->
+<hr> <br>   
 {% endblock %}
     </body>
 </html>
