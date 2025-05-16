@@ -98,7 +98,7 @@ class Contact(models.Model):
         return f"{self.name}'s message"
     
 class Enquire(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     pack = models.CharField(max_length=70, null=True, blank=True, choices=[
         ('water park', 'Water Park'),
         ('adhishakti water park', 'Adhishakti Water Park'),
