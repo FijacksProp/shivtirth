@@ -106,6 +106,7 @@ def delete_comment(request, comment_id):
             return redirect('detail', pk=post_id)
     return render(request, 'main/delete.html', {'comment': comment})
 
+@login_required
 def enquire(request):
     enquire = Enquire.objects.all()
 
