@@ -123,3 +123,6 @@ def enquire(request):
     }
 
     return render(request, 'main/enquire.html', context)
+
+def rules(request):
+    return render(request, 'main/rules.html')
