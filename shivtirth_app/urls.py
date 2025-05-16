@@ -15,6 +15,7 @@ urlpatterns = [
     path('enquire/', views.enquire, name='enquire'),
     path('comment/delete/<int:comment_id>/', views.delete_comment, name='delete_comment'),
     path('rules/', views.rules, name='rules'),
+    path('enquiry-success/', views.enquiry_success, name='enquiry-success'),
 ]
 
 if settings.DEBUG:
