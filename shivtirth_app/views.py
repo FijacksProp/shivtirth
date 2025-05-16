@@ -114,7 +114,7 @@ def enquire(request):
         if enquire_form.is_valid():
             instance = enquire_form.save(commit=False)
             instance.save()
-            return redirect('enquire')
+            return redirect('enquiry-success')
     else:
         enquire_form = EnquireForm()
     context = {
@@ -126,3 +126,6 @@ def enquire(request):
 
 def rules(request):
     return render(request, 'main/rules.html')
+
+def enquiry_success (request):
+    return render(request, 'main/enquiry-success.html')
