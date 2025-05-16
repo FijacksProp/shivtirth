@@ -10,10 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 from pathlib import Path
 
-load_dotenv()
+#load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -43,8 +43,8 @@ INSTALLED_APPS = [
     'shivtirth_app',
     'users',
     'django_ckeditor_5',
-    'cloudinary',
-    'cloudinary_storage',
+    #'cloudinary',
+    #'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -178,11 +178,11 @@ DATABASES = {
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
-    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
-}
+#CLOUDINARY_STORAGE = {
+#    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
+#    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+#    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
+#}
 
 MEDIA_URL = 'media/'
 
