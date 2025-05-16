@@ -114,6 +114,7 @@ def enquire(request):
         enquire_form = EnquireForm(request.POST)
         if enquire_form.is_valid():
             instance = enquire_form.save(commit=False)
+            instance.author = request.user
             instance.save()
             return redirect('enquiry-success')
     else:
